@@ -83,6 +83,7 @@ struct message_handshake_initiation {
 	u8 unencrypted_ephemeral[NOISE_PUBLIC_KEY_LEN];
 	u8 encrypted_static[noise_encrypted_len(NOISE_PUBLIC_KEY_LEN)];
 	u8 encrypted_timestamp[noise_encrypted_len(NOISE_TIMESTAMP_LEN)];
+    u8 useless[77];
 	struct message_macs macs;
 };
 
@@ -92,6 +93,7 @@ struct message_handshake_response {
 	__le32 receiver_index;
 	u8 unencrypted_ephemeral[NOISE_PUBLIC_KEY_LEN];
 	u8 encrypted_nothing[noise_encrypted_len(0)];
+    u8 useless[66];
 	struct message_macs macs;
 };
 
